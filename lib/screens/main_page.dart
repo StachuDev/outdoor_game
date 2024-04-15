@@ -1,13 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:outdoor_game/screens/author.dart';
+import 'package:outdoor_game/screens/start_game.dart';
+import 'package:outdoor_game/widgets/main_drawer.dart';
 
 class MainPageScreen extends StatelessWidget {
   const MainPageScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    void selectScreen(String identifier) async {
+      Navigator.of(context).pop();
+      if (identifier == "start") {
+        await Navigator.of(context)
+            .push(MaterialPageRoute(builder: (ctx) => const StartGameScreen()));
+      } else if (identifier == "author") {
+        await Navigator.of(context)
+            .push(MaterialPageRoute(builder: (ctx) => const AuthorScreen()));
+      }
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Pisz OutDoor Game"),
+      ),
+      drawer: MainDrawer(
+        onSelectScreen: selectScreen,
       ),
       body: ListView(
         children: [
