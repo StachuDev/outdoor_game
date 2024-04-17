@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:outdoor_game/screens/map.dart';
 import 'package:outdoor_game/widgets/level_tile.dart';
 
 class StartGameScreen extends StatelessWidget {
@@ -6,6 +7,11 @@ class StartGameScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    void onTap() {
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (ctx) => const MapScreen()));
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Wybierz poziom trudności"),
@@ -17,7 +23,7 @@ class StartGameScreen extends StatelessWidget {
           children: [
             LevelTile(
               imagePath: "assets/images/easy_level.jpg",
-              onTap: () {},
+              onTap: onTap,
               label: "ŁATWY",
             ),
             LevelTile(
