@@ -43,6 +43,8 @@ dependencies:
   envied_generator: ^0.5.4+1
   google_maps_flutter: ^2.6.0
   build_runner: ^2.4.9
+  flutter_riverpod: ^2.5.1
+  bloc: ^8.1.4
 
 dev_dependencies:
   flutter_test:
@@ -71,6 +73,7 @@ flutter:
     - assets/images/pisz.jpg
     - assets/images/easy_level.jpg
     - assets/images/hard_level.jpg
+    - assets/images/location_icon.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

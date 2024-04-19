@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:outdoor_game/screens/main_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 final colorScheme = ColorScheme.fromSeed(
     brightness: Brightness.dark,
     seedColor: const Color.fromARGB(255, 6, 247, 155),
-    background: const Color.fromARGB(255, 49, 66, 54));
+    background: Color.fromARGB(255, 78, 107, 86));
 
 final theme = ThemeData().copyWith(
   scaffoldBackgroundColor: colorScheme.background,
@@ -24,7 +25,7 @@ final theme = ThemeData().copyWith(
 );
 
 main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
